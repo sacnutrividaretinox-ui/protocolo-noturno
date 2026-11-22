@@ -1,0 +1,38 @@
+:root {
+  --noite: #14202b;
+  --concreto: #1f2e3a;
+  --neblina: #d7dde1;
+  --giz: #f1ede4;
+  --sodio: #e3a73c;
+  --alerta: #d4553f;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--noite); color: var(--giz); font: 16px/1.55 var(--sans); }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 96px; }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.05; }
+h2 { font-size: 1.35rem; margin-bottom: 12px; }
+p { margin: 0 0 12px; max-width: 62ch; }
+section { padding: 28px 0; border-top: 1px solid var(--concreto); }
+.muted { color: var(--neblina); opacity: .75; }
+input, textarea, select, button { font: inherit; color: inherit; }
+input, textarea, select { width: 100%; background: var(--concreto); border: 1px solid #33454f; border-radius: 6px; padding: 10px 12px; }
+textarea { min-height: 88px; resize: vertical; }
+button { background: var(--sodio); color: #1a1405; border: 0; border-radius: 6px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+button.ghost { background: transparent; color: var(--neblina); border: 1px solid #33454f; }
+button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 2px solid var(--sodio); outline-offset: 2px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row > input { flex: 1; }
+.row > select { width: auto; }
+.mission { display: flex; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--concreto); }
+.mission input { width: 20px; height: 20px; accent-color: var(--sodio); }
+.mission.done span { text-decoration: line-through; opacity: .55; }
+.score { font-family: var(--serif); font-size: 4rem; line-height: 1; color: var(--sodio); }
+.chat { display: grid; gap: 10px; margin-bottom: 12px; max-height: 420px; overflow-y: auto; }
+.msg { padding: 10px 14px; border-radius: 6px; background: var(--concreto); white-space: pre-wrap; }
+.msg.user { background: transparent; border: 1px solid #33454f; justify-self: end; }
+.err { color: var(--alerta); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
